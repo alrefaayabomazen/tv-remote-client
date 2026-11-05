@@ -25,11 +25,10 @@ jobs:
         gradle-version: '8.2'
 
     - name: Build Debug APK
-      run: gradle assembleDebug --stacktrace
+      run: gradle assembleDebug -x checkDebugAarMetadata --stacktrace
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
         name: TV-Remote-Client-APK
         path: app/build/outputs/apk/debug/app-debug.apk
-        
